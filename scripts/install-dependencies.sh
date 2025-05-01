@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 
 # This script installs the LLVM dependencies for Debian-based distros (e.g Ubuntu).
-LLVM_VERSION=20
-
-SCRIPTDIR=`dirname $0`
-${SCRIPTDIR}/llvm.sh ${LLVM_VERSION}
-
-# Check if script was successful
-if [ $? -ne 0 ]; then
-    echo "LLVM base installation failed."
-    exit 1
-fi
+LLVM_VERSION=19
 
 # Required dependencies
 PKG="flang-${LLVM_VERSION} libflang-${LLVM_VERSION}-dev llvm-${LLVM_VERSION}-dev libmlir-${LLVM_VERSION}-dev mlir-${LLVM_VERSION}-tools libclang-${LLVM_VERSION}-dev"
